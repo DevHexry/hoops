@@ -1,0 +1,25 @@
+while true do
+
+local children = workspace.Hoops:GetChildren()
+for i, child in ipairs(children) do
+   if child.Name == "Hoop" then
+child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+   end    
+end
+
+for i,v in pairs(game.Workspace.orbFolder:GetChildren()) do
+   for i,l in pairs(v:GetChildren()) do
+       if l:FindFirstChild("outerOrb") then
+           for i = 1,10 do
+               l.outerOrb.Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+           end
+       else
+           for i = 1,10 do
+               l.outerGem.Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+           end
+       end
+   end
+end
+wait(.5)
+end
+end)
